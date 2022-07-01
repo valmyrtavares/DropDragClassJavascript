@@ -14,16 +14,22 @@
           padding: 10px;
           border: 1px solid #aaaaaa;
         }
+        .bord{
+            border: solid blue 2px;
+        }
+        #moveItem{
+            border:none !important
+        }
         </style>
 </head>
-<body id="containers">
+<body >
 <div style="display:flex;">
-    <div class="droptarget">
+   
         <p id="moveItem">Elemento primeiro</p>
         <p id="moveItem">Elemento Segundo</p>
         <p id="moveItem">Elemento Terceiro</p>
         <p id="moveItem">Elemento Quarto</p>
-    </div>
+   
     <div style="display:flex;  flex-direction: column; ">
         <div id="containers" class="droptarget" ></div>
         <div id="containers" class="droptarget" ></div>   
