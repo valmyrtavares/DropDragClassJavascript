@@ -23,23 +23,36 @@ export default class dragAndDrop{
             item.setAttribute("draggable", true)
             item.setAttribute("id", this.geraString(6))
 
-            item.addEventListener("dragstart",(event)=>{
+            item.addEventListener("dragstart",()=>{
                 this.dragStart(event)
             })
         })
     }
     drop(event){
-        event.preventDefault()       
-        event.target.classList.remove("bord");     
-        var data = event.dataTransfer.getData("Text");
-        event.target.appendChild(document.getElementById(data));            
+        event.preventDefault()   
+        var t = event.dataTransfer.getData("Text")    
+        if(t){
+            console.log("ja tem")
+        }  else{
+            console.log("Não tem")
+        }
+     
+       
+            event.target.classList.remove("bord");     
+            var data = event.dataTransfer.getData("Text");           
+            event.target.appendChild(document.getElementById(data));            
+        // }else{
+        //     console.log("Fora")
+        // }
+
     }
     allowDrop(event) {
         event.preventDefault();
         event.target.classList.add("bord");
     }
 
-    dragStart(event){        
+    dragStart(event){   
+        
         event.dataTransfer.setData("Text", event.target.id);
     }
      geraString(tamanho){
